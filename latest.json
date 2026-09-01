@@ -1,9 +1,9 @@
 {
-  "version": "1.15.1",
+  "version": "1.16.0",
   "published": "2026-09-01",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.15.1/ScreenInk-1.15.1-x64.msi",
-  "sha256": "d27dca1ffe097caf5403dbc635f9fcfebf89d621c54acb6615121d36afff2f68",
-  "size": 41678801,
-  "notes": "Clearer wording when you deactivate a key: a key is never used up, and can be activated on as many machines as it is given to."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.16.0/ScreenInk-1.16.0-x64.msi",
+  "sha256": "457f0a4c96ac4c599cf9865ce93cd2538fc89f1efff20a30c0b2cb6d44641090",
+  "size": 41674705,
+  "notes": "The entry tier is now called Basic rather than Free.\n\n- Nothing about what it includes has changed: pen, highlighter, eraser, the full palette, thickness, undo/redo/clear, toolbar docking and the drawing hotkey.\n- Free read as a permanent giveaway; Basic reads as the first rung. The About tab, the locked-button messages and the documentation all say Basic now.\n- The downloads page is now a proper landing page, with a feature tour, screenshots, the default shortcut tables and a full changelog."
 }
