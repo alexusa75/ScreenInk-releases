@@ -1,9 +1,9 @@
 {
-  "version": "1.14.3",
+  "version": "1.14.4",
   "published": "2026-08-31",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.14.3/ScreenInk-1.14.3-x64.msi",
-  "sha256": "f1a3890574e479399d02a57f280802bcac27e5938cce2191d948936895876ae2",
-  "size": 41666513,
-  "notes": "Clean shutdown before installing an update; keeps your Start with Windows choice."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.14.4/ScreenInk-1.14.4-x64.msi",
+  "sha256": "02fd159e49ffa41efa593f00d5e4c2c45d70b459a763617cfb53952a1826ba28",
+  "size": 41670609,
+  "notes": "Layout fix for release notes on the About page."
 }
