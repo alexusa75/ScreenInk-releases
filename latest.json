@@ -1,9 +1,9 @@
 {
-  "version": "1.14.0",
+  "version": "1.14.1",
   "published": "2026-08-31",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.14.0/ScreenInk-1.14.0-x64.msi",
-  "sha256": "97ec1c3e2971f35b1cc378a426e1697ea8d88277c80954623514ae3faf32d2ce",
-  "size": 41677459,
-  "notes": "Automatic updates, and a Pro key that unlocks shapes, text, spotlight, zoom and capture."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.14.1/ScreenInk-1.14.1-x64.msi",
+  "sha256": "88cc900cc064a07445f89270488b3f0e4a638a7ae4c38df1c704bc269de1db67",
+  "size": 41693843,
+  "notes": "Update-path verification build."
 }
