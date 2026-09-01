@@ -1,9 +1,9 @@
 {
-  "version": "1.14.4",
+  "version": "1.15.0",
   "published": "2026-08-31",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.14.4/ScreenInk-1.14.4-x64.msi",
-  "sha256": "02fd159e49ffa41efa593f00d5e4c2c45d70b459a763617cfb53952a1826ba28",
-  "size": 41670609,
-  "notes": "Layout fix for release notes on the About page."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.15.0/ScreenInk-1.15.0-x64.msi",
+  "sha256": "27903710d6a4d7377f05485226e0a0a8da0b35364db64ad98f7e3854fe74f998",
+  "size": 41674705,
+  "notes": "Automatic updates and Pro activation.\n\n- ScreenInk now checks for new builds itself, once a day and quietly. Settings > About shows the installed build, what is waiting, and installs it in place - your settings, shortcuts and activation carry over.\n- Activation keys: the free tier keeps pen, highlighter, eraser and the full palette; a key adds shapes, text, spotlight, zoom, presentation cursors, fading ink, capture and custom shortcuts.\n- Upgrading no longer switches \"Start with Windows\" back on if you had turned it off."
 }
