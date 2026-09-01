@@ -19,7 +19,7 @@ Download `ScreenInk-<version>-x64.msi` from the latest release and run it. To in
 prompts:
 
 ```powershell
-msiexec /i ScreenInk-1.13.0-x64.msi /qn
+msiexec /i ScreenInk-1.15.0-x64.msi /qn
 ```
 
 Your settings live in `%APPDATA%\ScreenInk` and survive upgrades and removals.
