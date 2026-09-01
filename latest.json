@@ -1,9 +1,9 @@
 {
-  "version": "1.15.0",
-  "published": "2026-08-31",
+  "version": "1.15.1",
+  "published": "2026-09-01",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.15.0/ScreenInk-1.15.0-x64.msi",
-  "sha256": "27903710d6a4d7377f05485226e0a0a8da0b35364db64ad98f7e3854fe74f998",
-  "size": 41674705,
-  "notes": "Automatic updates and Pro activation.\n\n- ScreenInk now checks for new builds itself, once a day and quietly. Settings > About shows the installed build, what is waiting, and installs it in place - your settings, shortcuts and activation carry over.\n- Activation keys: the free tier keeps pen, highlighter, eraser and the full palette; a key adds shapes, text, spotlight, zoom, presentation cursors, fading ink, capture and custom shortcuts.\n- Upgrading no longer switches \"Start with Windows\" back on if you had turned it off."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.15.1/ScreenInk-1.15.1-x64.msi",
+  "sha256": "d27dca1ffe097caf5403dbc635f9fcfebf89d621c54acb6615121d36afff2f68",
+  "size": 41678801,
+  "notes": "Clearer wording when you deactivate a key: a key is never used up, and can be activated on as many machines as it is given to."
 }
