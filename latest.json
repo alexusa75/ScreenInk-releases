@@ -1,9 +1,9 @@
 {
-  "version": "1.14.2",
+  "version": "1.14.3",
   "published": "2026-08-31",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.14.2/ScreenInk-1.14.2-x64.msi",
-  "sha256": "b71df8532abc595356e95ed7dca3c490218f9f05b4aae7cdd2e0c206bae3b127",
-  "size": 41669267,
-  "notes": "Automatic updates and Pro activation."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.14.3/ScreenInk-1.14.3-x64.msi",
+  "sha256": "f1a3890574e479399d02a57f280802bcac27e5938cce2191d948936895876ae2",
+  "size": 41666513,
+  "notes": "Clean shutdown before installing an update; keeps your Start with Windows choice."
 }
