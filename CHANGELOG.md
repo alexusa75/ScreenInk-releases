@@ -6,6 +6,21 @@ Version numbers that do not appear here were internal builds that were never pub
 
 ---
 
+## 1.17.0 — 2026-09-02
+
+**Activation keys are now checked properly.**
+
+- ScreenInk re-checks its key once a day instead of once a fortnight, and it does so while it is
+  running rather than only at startup. It lives in the tray on a machine that may go weeks between
+  restarts, so "check at launch" was not a check at all.
+- A failed check because the machine was offline is retried a couple of hours later, instead of
+  waiting for the next launch.
+- If a key has been withdrawn, ScreenInk says so and returns to Basic. Previously the Pro buttons
+  would simply lock with no explanation.
+- The sixty-day offline grace is unchanged, but when it does run out ScreenInk now tells you,
+  rather than quietly changing behaviour.
+- **Check now** on the About tab verifies the key as well as looking for a new build, and the About
+  tab says plainly when the last confirmation is getting old.
 ## 1.16.0 — 2026-09-01
 
 - The entry tier is now called **Basic** rather than Free, in the app and here. Nothing about what

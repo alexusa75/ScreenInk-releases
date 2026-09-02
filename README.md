@@ -235,7 +235,8 @@ you can always see what a key would add.</sup>
 Paste the key into **Settings ▸ About** and press **Activate**. Case and dashes do not matter.
 
 Activation needs the internet once. After that ScreenInk works offline for months and re-confirms
-quietly every couple of weeks. A key is not tied to one machine — activate it on your laptop, your
+quietly once a day, so a key that is withdrawn stops working promptly and ScreenInk tells you why.
+**Check now** on the About tab verifies the key immediately. A key is not tied to one machine — activate it on your laptop, your
 desktop and the meeting-room PC. **Deactivate** on the About tab returns that machine to Basic.
 
 `keys.json` in this repository records the SHA-256 of every key issued. A hash cannot be turned
