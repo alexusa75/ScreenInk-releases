@@ -2,8 +2,9 @@
   "comment": "SHA-256 of every ScreenInk Pro key that has been issued. Keys themselves are never published: a hash cannot be turned back into the key it came from, so this file is a record of what exists and a way to withdraw it, not a list of working keys. Move a hash into 'revoked' to disable that key everywhere within a fortnight.",
   "keys": [
     "34b1552687dd604f7a54ee2237ea9564a8ae309dc760adee3643a1786e334513",
-    "24cc4ed837d0c64efd17c2b8a2ff62f19ad8357377ec7ffefe9277f1e2ed6fe1",
-    "416883cf5faf9c312ca39850aa93d00735583ea78fa238c6cd8704eeed4fc9f4"
+    "24cc4ed837d0c64efd17c2b8a2ff62f19ad8357377ec7ffefe9277f1e2ed6fe1"
   ],
-  "revoked": []
+  "revoked": [
+    "416883cf5faf9c312ca39850aa93d00735583ea78fa238c6cd8704eeed4fc9f4"
+  ]
 }
