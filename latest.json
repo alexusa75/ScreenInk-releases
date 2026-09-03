@@ -1,9 +1,9 @@
 {
-  "version": "1.18.0",
-  "published": "2026-09-02",
+  "version": "1.19.0",
+  "published": "2026-09-03",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.18.0/ScreenInk-1.18.0-x64.msi",
-  "sha256": "efde88cab3fca9a602b2a6285c04a1b3dd74200deffec1116704491e973efbad",
-  "size": 42170321,
-  "notes": "The setup wizard now carries the ScreenInk logo."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.19.0/ScreenInk-1.19.0-x64.msi",
+  "sha256": "d2f8aa69f67a9acabe53217f439af31316d4697f6b4e3e2f4e2b15970bda133c",
+  "size": 42178513,
+  "notes": "Closing, collapsing or clearing now wipes the screen and hands the mouse back."
 }
