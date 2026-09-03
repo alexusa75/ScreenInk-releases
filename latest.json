@@ -1,9 +1,9 @@
 {
-  "version": "1.17.0",
+  "version": "1.18.0",
   "published": "2026-09-02",
   "pageUrl": "https://github.com/alexusa75/ScreenInk-releases/releases/latest",
-  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.17.0/ScreenInk-1.17.0-x64.msi",
-  "sha256": "d533e10a9295cca99a8469d16b7c2de6ac2eb1839c11fd591c843a2e1e5d179b",
-  "size": 41691089,
-  "notes": "Activation keys are now re-checked once a day while ScreenInk is running, not just at launch. A withdrawn key stops working promptly and ScreenInk explains why instead of silently locking the Pro buttons."
+  "url": "https://github.com/alexusa75/ScreenInk-releases/releases/download/v1.18.0/ScreenInk-1.18.0-x64.msi",
+  "sha256": "efde88cab3fca9a602b2a6285c04a1b3dd74200deffec1116704491e973efbad",
+  "size": 42170321,
+  "notes": "The setup wizard now carries the ScreenInk logo."
 }
