@@ -59,6 +59,10 @@ def get(path: str, token: str):
         with urllib.request.urlopen(request, timeout=30) as response:
             return json.load(response)
     except urllib.error.HTTPError as error:
+        if error.code == 401:
+            # A bad token should stop everything loudly. Carrying on would write a
+            # row of zeroes and quietly corrupt the history with a fake quiet day.
+            raise SystemExit("The token was rejected (401). Nothing was written.") from None
         # Traffic needs push access. Say so plainly rather than dying, because the
         # download counts are still worth collecting without it.
         if error.code in (403, 404):
@@ -130,10 +134,18 @@ def collect_downloads(repo: str, token: str, today: str) -> list[dict]:
     return rows
 
 
-def collect_traffic(repo: str, token: str) -> list[dict]:
-    """Views and clones, per day, for as far back as GitHub will admit."""
-    views = get(f"/repos/{repo}/traffic/views", token) or {}
-    clones = get(f"/repos/{repo}/traffic/clones", token) or {}
+def collect_traffic(repo: str, token: str) -> tuple[list[dict], bool]:
+    """
+    Views and clones, per day, for as far back as GitHub will admit.
+
+    Returns the rows and whether GitHub actually answered. The distinction matters:
+    an empty list because nobody visited looks identical to an empty list because
+    our token was refused, and those call for very different reactions.
+    """
+    views = get(f"/repos/{repo}/traffic/views", token)
+    clones = get(f"/repos/{repo}/traffic/clones", token)
+    permitted = views is not None or clones is not None
+    views, clones = views or {}, clones or {}
 
     by_date: dict[str, dict] = {}
     for entry in views.get("views", []):
@@ -144,16 +156,19 @@ def collect_traffic(repo: str, token: str) -> list[dict]:
         row["clones"] = entry["count"]
         row["unique_cloners"] = entry["uniques"]
 
-    return [
-        {
-            "date": date,
-            "views": row.get("views", 0),
-            "unique_visitors": row.get("unique_visitors", 0),
-            "clones": row.get("clones", 0),
-            "unique_cloners": row.get("unique_cloners", 0),
-        }
-        for date, row in sorted(by_date.items())
-    ]
+    return (
+        [
+            {
+                "date": date,
+                "views": row.get("views", 0),
+                "unique_visitors": row.get("unique_visitors", 0),
+                "clones": row.get("clones", 0),
+                "unique_cloners": row.get("unique_cloners", 0),
+            }
+            for date, row in sorted(by_date.items())
+        ],
+        permitted,
+    )
 
 
 def collect_referrers(repo: str, token: str, today: str) -> list[dict]:
@@ -173,7 +188,7 @@ def collect_referrers(repo: str, token: str, today: str) -> list[dict]:
     ]
 
 
-def write_summary(path: Path) -> None:
+def write_summary(path: Path, traffic_permitted: bool = True) -> None:
     """
     A short, readable report, so the numbers are usable without opening a
     spreadsheet. Everything here is derived from the CSVs, never from the API,
@@ -188,6 +203,15 @@ def write_summary(path: Path) -> None:
     lines.append(f"Generated {dt.datetime.now(dt.timezone.utc):%Y-%m-%d %H:%M} UTC. ")
     lines.append("Updated daily by `.github/workflows/stats.yml`.")
     lines.append("")
+
+    if not traffic_permitted:
+        lines += [
+            "> **Traffic collection is currently refused.** GitHub's traffic endpoints need a token",
+            "> with push access, and the token this job is using was rejected. Views, clones and",
+            "> referrers below are whatever was recorded before that started happening, and they are",
+            "> not being updated. Download counts are unaffected. See `stats/README.md` for the fix.",
+            "",
+        ]
 
     # --- downloads, latest snapshot per release -----------------------------
     latest: dict[tuple[str, str], dict] = {}
@@ -289,12 +313,14 @@ def main() -> int:
     print(f"Snapshotting {args.repo} for {today}")
 
     downloads = collect_downloads(args.repo, token, today)
-    traffic = collect_traffic(args.repo, token)
+    traffic, traffic_permitted = collect_traffic(args.repo, token)
     referrers = collect_referrers(args.repo, token, today)
 
     total = sum(int(row["downloads"]) for row in downloads)
     print(f"  {len(downloads)} asset(s), {total} download(s) all told")
     print(f"  {len(traffic)} day(s) of traffic, {len(referrers)} referrer(s)")
+    if not traffic_permitted:
+        print("  ! traffic was refused - the token needs push access", file=sys.stderr)
 
     if args.dry_run:
         print(json.dumps({"downloads": downloads, "traffic": traffic, "referrers": referrers}, indent=2))
@@ -307,7 +333,7 @@ def main() -> int:
     merge(HERE / "referrers.csv", ["date", "referrer", "views", "unique_visitors"], referrers,
           key=("date", "referrer"))
 
-    write_summary(HERE / "SUMMARY.md")
+    write_summary(HERE / "SUMMARY.md", traffic_permitted)
     print("  wrote downloads.csv, traffic.csv, referrers.csv and SUMMARY.md")
 
     return 0

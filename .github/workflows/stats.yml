@@ -30,7 +30,12 @@ jobs:
 
       - name: Snapshot downloads and traffic
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN can read releases but GitHub refuses it on the traffic
+          # endpoints, which want a user token with push access. STATS_PAT is a
+          # fine-grained token scoped to this repository alone; without it the job
+          # still records downloads and says plainly in SUMMARY.md that traffic is
+          # missing, rather than writing a convincing row of zeroes.
+          GITHUB_TOKEN: ${{ secrets.STATS_PAT || secrets.GITHUB_TOKEN }}
           STATS_REPO: ${{ github.repository }}
         run: python stats/collect.py
 

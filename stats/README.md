@@ -12,6 +12,30 @@
 
 `.github/workflows/stats.yml` runs the collector every morning and commits the result.
 
+### Traffic needs a token the Action does not have by default
+
+GitHub's traffic endpoints refuse the automatic `GITHUB_TOKEN`: they want a user token
+with push access. Download counts collect fine without it, so the job still runs and
+`SUMMARY.md` says openly when traffic is being refused rather than recording a false
+quiet day.
+
+To switch traffic collection on, create a **fine-grained personal access token** at
+<https://github.com/settings/personal-access-tokens/new>:
+
+- **Repository access:** only `alexusa75/ScreenInk-releases`
+- **Permissions:** `Contents` → read, `Administration` → read *(this is the one the
+  traffic endpoints check)*
+- Give it a long expiry, or expect to replace it
+
+Then add it to the repository as a secret named `STATS_PAT`:
+
+```powershell
+gh secret set STATS_PAT --repo alexusa75/ScreenInk-releases
+```
+
+Scoping it to this one repository matters. A classic token, or anything broader, would
+give a workflow in a public repository far more reach than counting page views deserves.
+
 ## Two things worth knowing
 
 **GitHub forgets traffic after fourteen days.** Views, clones and referrers are a

@@ -1,15 +1,15 @@
 # ScreenInk download statistics
 
-Generated 2026-09-03 02:11 UTC. 
+Generated 2026-09-03 02:13 UTC. 
 Updated daily by `.github/workflows/stats.yml`.
 
 ## Downloads
 
-**1 download** in total, as of 2026-09-03.
+**2 downloads** in total, as of 2026-09-03.
 
 | Release | Published | Downloads |
 |---|---|---|
-| v1.17.0 | 2026-09-02 | 1 |
+| v1.17.0 | 2026-09-02 | 2 |
 
 ## Repository traffic
 
