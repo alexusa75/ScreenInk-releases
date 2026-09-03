@@ -1,0 +1,49 @@
+name: Download statistics
+
+# GitHub throws traffic data away after a fortnight and there is no way to ask for
+# it retrospectively. So this writes it down every day. The fourteen-day overlap
+# means a missed run costs nothing - the next one backfills.
+
+on:
+  schedule:
+    - cron: "17 4 * * *"   # daily, a little after midnight in the Americas
+  workflow_dispatch:        # and on demand, from the Actions tab
+
+# The traffic endpoints refuse anything without push access, and we commit the
+# result back, so this job needs write access to contents.
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Snapshot downloads and traffic
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATS_REPO: ${{ github.repository }}
+        run: python stats/collect.py
+
+      - name: Commit anything that changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats/
+          # Nothing to do on a quiet day, and an empty commit every morning would
+          # bury the real history.
+          if git diff --cached --quiet; then
+            echo "No change today."
+          else
+            git commit -m "Record download statistics for $(date -u +%Y-%m-%d)"
+            git push
+          fi
