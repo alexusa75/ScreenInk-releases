@@ -6,6 +6,18 @@ Version numbers that do not appear here were internal builds that were never pub
 
 ---
 
+## 1.18.0 — 2026-09-02
+
+**The setup wizard now looks like ScreenInk.**
+
+- The installer showed generic stock artwork, which said nothing about what was being installed.
+  It now carries the ScreenInk logo and name on its first and last pages, and a small mark in the
+  banner across the pages in between.
+- Nothing in the application itself changed. If you are already on 1.17.0 there is no reason to
+  update, beyond seeing a nicer wizard the next time you do.
+
+---
+
 ## 1.17.0 — 2026-09-02
 
 **Activation keys are now checked properly.**
