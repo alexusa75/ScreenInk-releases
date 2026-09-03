@@ -1,6 +1,6 @@
 # ScreenInk download statistics
 
-Generated 2026-09-03 02:15 UTC. 
+Generated 2026-09-03 08:56 UTC. 
 Updated daily by `.github/workflows/stats.yml`.
 
 > **Traffic collection is currently refused.** GitHub's traffic endpoints need a token
@@ -14,6 +14,7 @@ Updated daily by `.github/workflows/stats.yml`.
 
 | Release | Published | Downloads |
 |---|---|---|
+| v1.18.0 | 2026-09-03 | 0 |
 | v1.17.0 | 2026-09-02 | 2 |
 
 ## Repository traffic
