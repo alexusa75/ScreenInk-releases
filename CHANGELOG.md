@@ -6,6 +6,19 @@ Version numbers that do not appear here were internal builds that were never pub
 
 ---
 
+## 1.19.0 — 2026-09-03
+
+**Closing, collapsing or clearing now gets ScreenInk out of your way completely.**
+
+- Closing the toolbar, collapsing it, or pressing **Clear all** now wipes the drawing, drops any
+  backdrop, spotlight or zoom, and switches back to the pointer so your clicks go straight through
+  to whatever is underneath. Previously the ink stayed on screen and the overlay kept intercepting
+  the mouse, which looked for all the world like a frozen desktop.
+- **Clear all** is available whenever something is still in the way, not just when there are
+  strokes to remove — a whiteboard backdrop with nothing drawn on it now counts.
+
+---
+
 ## 1.18.0 — 2026-09-02
 
 **The setup wizard now looks like ScreenInk.**
