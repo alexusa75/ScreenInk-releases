@@ -24,6 +24,11 @@ the release, so removing a superseded release also removes the record of how man
 people took it. Keep old releases and mark them superseded in the notes instead.
 `SUMMARY.md` will show a negative day if this ever happens again.
 
+**Clone counts are mostly us.** `installer\Publish-Release.ps1` clones this repository on
+every single publish, so `clones` and `unique_cloners` largely measure our own release
+automation rather than anybody's interest. Read `views`, `unique_visitors` and the
+download counts; treat clones as noise.
+
 ## The honest position on geography
 
 **GitHub exposes no country or region data at all.** Not for downloads, not for
