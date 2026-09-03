@@ -10,7 +10,7 @@ Pen, highlighter, arrows, shapes and captions over anything on your screen — s
 terminal, a live demo. Plus a spotlight, region zoom and a laser-trail pointer for the moments when
 a drawing is not what you need.
 
-### [⬇ Download for Windows](https://github.com/alexusa75/ScreenInk-releases/releases/latest)
+### [⬇ Download for Windows](https://screenink-download.screenink.workers.dev/download)
 
 Windows 10 and 11 · per-user install, no administrator prompt · self-contained, no prerequisites
 
@@ -168,8 +168,8 @@ icon. Every keyboard shortcut is rebindable: click one, press the combination yo
 
 ## Installing
 
-Download `ScreenInk-<version>-x64.msi` from the
-[latest release](https://github.com/alexusa75/ScreenInk-releases/releases/latest) and run it. The
+[Download ScreenInk](https://screenink-download.screenink.workers.dev/download) and run the
+`.msi`. It is also on the [releases page](https://github.com/alexusa75/ScreenInk-releases/releases/latest). The
 installer is per-user, so Windows will not ask for an administrator. To install silently:
 
 ```powershell
@@ -247,9 +247,16 @@ genuine, and what lets a lost or misused key be withdrawn.
 
 ## Questions
 
-**Does it capture or record anything?** No. There is no telemetry, no account and no background
-service. The only network call ScreenInk ever makes is to this repository, to look for a newer
-version and to confirm an activation key.
+**Does it capture or record anything?** No. There is no telemetry in the app, no account and no
+background service. The only network calls ScreenInk ever makes are to this repository, to look for
+a newer version and to confirm an activation key.
+
+**What about the download button?** It passes through a redirect that counts the download and notes
+the country it came from, so we know roughly where ScreenInk is being used. No IP address, no
+user-agent, no cookie and no identifier of any kind is stored — just a country, a version and a
+date, which are only ever looked at as totals. If you would rather not go through it at all, take
+the file straight from the [releases page](https://github.com/alexusa75/ScreenInk-releases/releases/latest);
+it is the same installer.
 
 **Will it steal focus from my slides?** No. With the pointer tool selected the overlay is
 completely click-through — your clicker, arrow keys and mouse all reach PowerPoint as usual. It

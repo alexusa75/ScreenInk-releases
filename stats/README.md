@@ -52,8 +52,23 @@ having ScreenInk itself report in after installation, which would additionally
 reveal how many installs are *active* rather than merely downloaded - but that is
 telemetry, and it should be opt-out, disclosed, and anonymous if it is done at all.
 
-Neither is set up. Both are decisions to be made deliberately rather than by
-accident, which is why this file says so instead of quietly adding a tracker.
+**The Cloudflare Worker is now live.** The download button on the README points at
+`screenink-download.screenink.workers.dev/download`, which records the country and
+redirects to the asset. It stores a country, region, version, referring host and date,
+and no IP address, user-agent, cookie or identifier of anything. It is disclosed in the
+README under "Questions", and anyone who would rather avoid it can take the file from
+the releases page instead.
+
+Two caveats that matter when reading those numbers:
+
+* Downloads taken straight from the releases page bypass the redirect, so GitHub's
+  count remains the authoritative total and the Worker's is a sample of it.
+* The in-app updater deliberately does not go through the redirect, so these figures
+  measure new downloads rather than existing users updating.
+
+The country breakdown is not published here. At current volumes a single download from
+a small country is effectively one identifiable person, which is precisely what the
+"no identifiers" rule above exists to prevent.
 
 ## Running the collector by hand
 
