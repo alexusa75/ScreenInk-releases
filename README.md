@@ -173,10 +173,34 @@ icon. Every keyboard shortcut is rebindable: click one, press the combination yo
 installer is per-user, so Windows will not ask for an administrator. To install silently:
 
 ```powershell
-msiexec /i ScreenInk-1.16.0-x64.msi /qn
+msiexec /i ScreenInk-1.19.0-x64.msi /qn
 ```
 
 Your settings live in `%APPDATA%\ScreenInk` and survive upgrades and removals.
+
+### "Windows protected your PC"
+
+You will see this, and it is worth understanding rather than clicking past.
+
+ScreenInk is not yet signed with a code-signing certificate, so Windows cannot tell you who wrote
+it. SmartScreen says so in the bluntest terms available. It is not a claim that anything is wrong
+with the file — it is an admission that Windows does not know, which is a fair thing for it to say
+about an installer downloaded from the internet.
+
+To install anyway: **More info ▸ Run anyway**.
+
+Before you do, you can check you got the file we published. Compare the checksum:
+
+```powershell
+Get-FileHash .\ScreenInk-1.19.0-x64.msi -Algorithm SHA256
+```
+
+against the `sha256` in
+[latest.json](https://raw.githubusercontent.com/alexusa75/ScreenInk-releases/main/latest.json).
+If they match, the file is byte-for-byte the one built here. If they do not, do not run it.
+
+ScreenInk's own updater does this check automatically on every update, and refuses to install
+anything whose checksum does not match.
 
 ### Updating
 
