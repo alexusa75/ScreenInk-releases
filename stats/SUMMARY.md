@@ -1,6 +1,6 @@
 # ScreenInk download statistics
 
-Generated 2026-09-11 08:55 UTC. 
+Generated 2026-09-12 08:38 UTC. 
 Updated daily by `.github/workflows/stats.yml`.
 
 > **Traffic collection is currently refused.** GitHub's traffic endpoints need a token
@@ -10,7 +10,7 @@ Updated daily by `.github/workflows/stats.yml`.
 
 ## Downloads
 
-**10 downloads** in total, as of 2026-09-11.
+**10 downloads** in total, as of 2026-09-12.
 
 | Release | Published | Downloads |
 |---|---|---|
@@ -30,6 +30,7 @@ Updated daily by `.github/workflows/stats.yml`.
 | 2026-09-09 | +2 |
 | 2026-09-10 | +0 |
 | 2026-09-11 | +0 |
+| 2026-09-12 | +0 |
 
 _A negative number means a release was deleted. Deleting a release destroys its download count permanently, so don't._
 
